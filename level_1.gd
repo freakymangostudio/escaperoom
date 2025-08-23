@@ -4,3 +4,4 @@ extends Node3D
 #bc
 func _ready() -> void:
 	pass
+#test
