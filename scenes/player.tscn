@@ -24,9 +24,6 @@ outer_radius = 0.3
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_3vyb7")
-movement_speed = null
-jump_force = null
-gravity = null
 
 [node name="Body" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24097, 0)
