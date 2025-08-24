@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://c522f1eajqj4w"]
+
+[ext_resource type="Script" uid="uid://pehbeyuxrkor" path="res://scripts/player.gd" id="1_3vyb7"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_u8vuu"]
+top_radius = 0.3
+height = 0.8
+
+[sub_resource type="SphereMesh" id="SphereMesh_3vyb7"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_g2els"]
+radius = 0.15
+height = 0.9
+
+[sub_resource type="SphereMesh" id="SphereMesh_qhqgy"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="TorusMesh" id="TorusMesh_u8vuu"]
+inner_radius = 0.2
+outer_radius = 0.3
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dqkch"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_3vyb7")
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24097, 0)
+mesh = SubResource("CylinderMesh_u8vuu")
+
+[node name="Head" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.787081, 0)
+mesh = SubResource("SphereMesh_3vyb7")
+skeleton = NodePath("../..")
+
+[node name="RightFoot" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(-0.0900242, -0.257768, -0.962004, 1.28136e-09, 0.965926, -0.258819, 0.99594, -0.0233, -0.0869567, 0.35, -0.798, 0.026)
+mesh = SubResource("CapsuleMesh_g2els")
+
+[node name="RightHand" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.0537881, -0.620544, 0.782325, -0.0721886, -0.783825, -0.616771, 0.99594, -0.0233, -0.0869567, 0.565663, 0.373184, 0.026)
+mesh = SubResource("CapsuleMesh_g2els")
+
+[node name="LeftHand" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.0537881, -0.620544, 0.782325, -0.0721886, -0.783825, -0.616771, 0.99594, -0.0233, -0.0869567, -0.555591, -0.000496507, 0.026)
+mesh = SubResource("CapsuleMesh_g2els")
+
+[node name="LeftFoot" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(-0.0900242, 0.257768, -0.962004, 5.74384e-10, 0.965926, 0.258819, 0.99594, 0.0233, -0.0869567, -0.35, -0.798, -0.04)
+mesh = SubResource("CapsuleMesh_g2els")
+
+[node name="RightEye" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 1, -0.430337)
+mesh = SubResource("SphereMesh_qhqgy")
+
+[node name="LeftEye" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 1, -0.430337)
+mesh = SubResource("SphereMesh_qhqgy")
+
+[node name="Mouth" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 0.410416, 0.911898, 0, -0.911898, 0.410416, 0, 0.772324, -0.353359)
+mesh = SubResource("TorusMesh_u8vuu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33691, 0)
+shape = SubResource("CylinderShape3D_dqkch")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.96593, 0.258802, 0, -0.258802, 0.96593, 0, 2.9285, -0.112159)
