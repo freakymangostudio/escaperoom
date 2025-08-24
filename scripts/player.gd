@@ -4,6 +4,9 @@ extends CharacterBody3D
 @export var jump_force := 5.0
 @export var gravity := 10.0
 
+func _ready() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 func _physics_process(delta: float) -> void:
 	var movement_direction = Vector3.ZERO
 	
@@ -15,6 +18,8 @@ func _physics_process(delta: float) -> void:
 		movement_direction.x -= 1
 	if Input.is_action_pressed("move_right"):
 		movement_direction.x += 1
+	if Input.is_action_pressed("set_mouse_free"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
 	if is_on_floor():
 		velocity.y = 0
@@ -31,3 +36,8 @@ func _physics_process(delta: float) -> void:
 		velocity.z = 0
 		velocity.x = 0
 	move_and_slide()
+	
+func _input(event: InputEvent) -> void:
+	var mouse_movement = 
+	
+	

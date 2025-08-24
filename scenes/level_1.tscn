@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://daoqpfiw61kd5"]
 
-[ext_resource type="Script" uid="uid://b7k7xy5evylpf" path="res://level_1.gd" id="1_axrv8"]
-[ext_resource type="PackedScene" uid="uid://c522f1eajqj4w" path="res://scenes/player.tscn" id="2_8dhm4"]
+[ext_resource type="Script" uid="uid://b7k7xy5evylpf" path="res://level_1.gd" id="1_bswci"]
+[ext_resource type="PackedScene" uid="uid://c522f1eajqj4w" path="res://scenes/player.tscn" id="2_rus8k"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8dhm4"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -38,7 +38,7 @@ data = PackedVector3Array(-25, 1.5, 0.5, 25, 1.5, 0.5, -25, -1.5, 0.5, 25, 1.5, 
 data = PackedVector3Array(-25, 1.5, 0.5, 25, 1.5, 0.5, -25, -1.5, 0.5, 25, 1.5, 0.5, 25, -1.5, 0.5, -25, -1.5, 0.5, 25, 1.5, -0.5, -25, 1.5, -0.5, 25, -1.5, -0.5, -25, 1.5, -0.5, -25, -1.5, -0.5, 25, -1.5, -0.5, 25, 1.5, 0.5, 25, 1.5, -0.5, 25, -1.5, 0.5, 25, 1.5, -0.5, 25, -1.5, -0.5, 25, -1.5, 0.5, -25, 1.5, -0.5, -25, 1.5, 0.5, -25, -1.5, -0.5, -25, 1.5, 0.5, -25, -1.5, 0.5, -25, -1.5, -0.5, 25, 1.5, 0.5, -25, 1.5, 0.5, 25, 1.5, -0.5, -25, 1.5, 0.5, -25, 1.5, -0.5, 25, 1.5, -0.5, -25, -1.5, 0.5, 25, -1.5, 0.5, -25, -1.5, -0.5, 25, -1.5, 0.5, 25, -1.5, -0.5, -25, -1.5, -0.5)
 
 [node name="Level_1" type="Node3D"]
-script = ExtResource("1_axrv8")
+script = ExtResource("1_bswci")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_6bh15")
@@ -56,7 +56,7 @@ mesh = SubResource("BoxMesh_8dhm4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_t7q1u")
 
-[node name="Player" parent="." instance=ExtResource("2_8dhm4")]
+[node name="Player" parent="." instance=ExtResource("2_rus8k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0252793, 0)
 
 [node name="Wall1" type="MeshInstance3D" parent="."]
