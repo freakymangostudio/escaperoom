@@ -34,6 +34,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.787081, 0)
 mesh = SubResource("SphereMesh_3vyb7")
 skeleton = NodePath("../..")
 
+[node name="Camera3D" type="Camera3D" parent="Body/Head"]
+transform = Transform3D(1, 0, 0, 0, 0.96593, 0.258802, 0, -0.258802, 0.96593, 0, 0.791077, -0.116567)
+
 [node name="RightFoot" type="MeshInstance3D" parent="Body"]
 transform = Transform3D(-0.0900242, -0.257768, -0.962004, 1.28136e-09, 0.965926, -0.258819, 0.99594, -0.0233, -0.0869567, 0.35, -0.798, 0.026)
 mesh = SubResource("CapsuleMesh_g2els")
@@ -65,6 +68,3 @@ mesh = SubResource("TorusMesh_u8vuu")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33691, 0)
 shape = SubResource("CylinderShape3D_dqkch")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.96593, 0.258802, 0, -0.258802, 0.96593, 0, 2.9285, -0.112159)
